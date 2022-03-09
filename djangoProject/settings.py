@@ -87,12 +87,22 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
     }
 }'''
 import dj_database_url
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'skp_project',
         'USER': 'postgres',
         'PASSWORD': '123456789',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dd65as8sj3bqs2',
+        'USER': 'grqhfljkxtowez',
+        'PASSWORD': '9bb30117a1296a75784984c23614cfd9bdd723a79bd659a9f21c619005ed609f',
         'HOST': 'localhost',
         'PORT': '5432',
     }
