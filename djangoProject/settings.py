@@ -96,7 +96,7 @@ import dj_database_url
         'HOST': 'localhost',
         'PORT': '5432',
     }
-    
+
 }'''
 DATABASES = {
     'default': {

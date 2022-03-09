@@ -1,1 +1,16 @@
-{% extends 'base.html' %}
+<html>
+    <head>
+        <title>FCP</title>
+    </head>
+    <body>
+
+        <form method="post">
+            {% csrf_token %}
+            Username <input type="text" name="username"/><br><br>
+            Password <input type="password" name="password" id="password"/><br><br>
+            <input type="reset"/>
+            <input type="submit"/>
+        </form>
+
+    </body>
+</html>

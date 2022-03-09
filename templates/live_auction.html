@@ -45,56 +45,43 @@
     <div class="card card-solid">
       <div class="card-body pb-0">
         <h1 style="color:blue;text-align:center"><strong>Friends Circle </strong></h1>
-        <h1 style="color:red;text-align:center"><strong>Auction will Start at 10th March 2022 </strong></h1>
-        <h4 style="color:red;text-align:center"><a href="{% url 'live_auction' %}" >Live auction click here </a></h4>
+        <h1 style="color:red;text-align:center"><strong>Live Auction </strong></h1>
         <div class="row">
             
             <table id="" class="table table-bordered table-hover">
               
               <tr>
                 <th>Team Name</th>
-                <th>Owner</th>
-                <th>Manager</th>
+                <th>Initial Amount</th>
+                <th>Balance</th>
               </tr>
              {% for i in team_details %}
              <tr>
               <td>{{i.name}}</td>
-              <td>{{i.owner}}</td>
-              <td>{{i.manager}}</td>
-            </tr>{% endfor %}
-              
-          
-              
-             
-          </table>
-           <!-- Default box -->
-      <div class="card card-solid">
-        <div class="card-body pb-0">
-          <div class="row">
-            {% for i in profile_data %}
-            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-              <div class="card bg-light d-flex flex-fill">
-               
-                <div class="card-body pt-0">
-                  <div class="row">
-                   
-                    <div class="">
-                      <img src="{{i.profile_photo.url}}" style="width: 850px;height: 450px;"alt="user-avatar" class=" img-fluid">
-                      <h3>Player ID : {{i.player_id}}</h3>
-                      <h3>Team : {{i.team}} </h3>
-                      <h3>Auction : {{i.amount}} INR</h3>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            {% endfor %}
-            
-            </div>
-          </div>
-        </div>
+              <td>{{i.original_amount}}</td>
+              <td>{{i.balance_amount}}</td>
 
+            </tr>{% endfor %}
+          </table>
+
+           <!-- Default box -->
+           
+        <table id="" class="table table-bordered table-hover">
+              
+            <tr>
+              <th>Player ID</th>
+              <th>Team Name</th>
+              <th>Amount</th>
+            </tr>
+            {% for j in auction_data %}
+            <tr>
+             <td>{{j.player_id}}</td>
+             <td>{{j.team}}</td>
+             <td>{{j.amount}}</td>
+            </tr>
+           {% endfor %}
+        </table>
+      
       <!-- 
           <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
             

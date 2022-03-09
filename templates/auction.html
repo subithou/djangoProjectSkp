@@ -44,23 +44,22 @@
     <!-- Default box -->
     <div class="card card-solid">
       <div class="card-body pb-0">
-        <h1 style="color:blue;text-align:center"><strong>Friends Circle </strong></h1>
-        <h1 style="color:red;text-align:center"><strong>Auction will Start at 10th March 2022 </strong></h1>
-        <h4 style="color:red;text-align:center"><a href="{% url 'live_auction' %}" >Live auction click here </a></h4>
+        <h1 style="color:red;text-align:center"><strong>Auction 10th March 2022 </strong></h1>
         <div class="row">
             
             <table id="" class="table table-bordered table-hover">
               
               <tr>
                 <th>Team Name</th>
-                <th>Owner</th>
-                <th>Manager</th>
+                <th>Initial Amount</th>
+                <th>Balance</th>
               </tr>
              {% for i in team_details %}
              <tr>
               <td>{{i.name}}</td>
-              <td>{{i.owner}}</td>
-              <td>{{i.manager}}</td>
+              <td>{{i.original_amount}}</td>
+              <td>{{i.balance_amount}}</td>
+
             </tr>{% endfor %}
               
           
@@ -83,6 +82,7 @@
                       <h3>Player ID : {{i.player_id}}</h3>
                       <h3>Team : {{i.team}} </h3>
                       <h3>Auction : {{i.amount}} INR</h3>
+                      <a href="{% url 'add_auction' p_id=i.player_id %}"><button type="button" class="btn btn-primary">Add</button></a>
                     </div>
                   </div>
                 </div>

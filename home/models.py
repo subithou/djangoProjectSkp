@@ -22,3 +22,12 @@ class team(models.Model):
     def __str__(self):
         name = self.name
         return name
+
+class auction_data(models.Model):
+    player_id = models.CharField(max_length=255, null=False, unique=True)
+    team = models.CharField(max_length=255, null=False, unique=True)
+    amount = models.PositiveBigIntegerField(default=None, null=False)
+
+    def __str__(self):
+        name = self.player_id
+        return name
