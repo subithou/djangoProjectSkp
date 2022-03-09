@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
     }
 }'''
 import dj_database_url
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'skp_project',
@@ -96,8 +96,9 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}
-'''DATABASES = {
+    
+}'''
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dd65as8sj3bqs2',
@@ -106,7 +107,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}'''
+}
 
 #WHITENOISE_USE_FINDERS = True
 
