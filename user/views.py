@@ -5,5 +5,5 @@ from home.models import team
 
 # Create your views here.
 def user_home(request):
-    team_details = team.objects.filter()
+    team_details = team.objects.all()
     return render(request, 'user.html', {'context': team_details})
