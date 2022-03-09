@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2o(^62rlpdy3n*iknz3wi9_3-j!szc+cb^i(+r62h_@ioglu&b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
     }
 }'''
 import dj_database_url
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'skp_project',
@@ -96,8 +96,8 @@ import dj_database_url
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}'''
-DATABASES = {
+}
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dd65as8sj3bqs2',
@@ -106,7 +106,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}
+}'''
 
 #WHITENOISE_USE_FINDERS = True
 
