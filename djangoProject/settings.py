@@ -56,6 +56,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'djangoProject.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -96,8 +97,11 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+WHITENOISE_USE_FINDERS = True
+
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Password validation
@@ -129,7 +133,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
