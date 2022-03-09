@@ -13,9 +13,9 @@ class profile(models.Model):
         return name
 
 class team(models.Model):
-    team_name = models.CharField(max_length=255, null=False)
-    team_manager = models.CharField(max_length=255, null=False)
-    team_owner = models.CharField(max_length=255, null=False)
+    name = models.CharField(max_length=255, null=False)
+    manager = models.CharField(max_length=255, null=False)
+    owner = models.CharField(max_length=255, null=False)
     original_amount = models.PositiveBigIntegerField(default=None, null=True)
     balance_amount = models.PositiveBigIntegerField(default=None, null=True)
 
