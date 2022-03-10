@@ -35,20 +35,25 @@ def add_auction(request, p_id):
         team_details = team.objects.get(name=team_name)
         team_amount = team_details.balance_amount
         print(type(team_amount), type(amount))
-        if int(amount) <= team_amount:
-            team_details.balance_amount = team_amount - int(amount)
-            team_details.save()
-
-            p_data = profile.objects.get(player_id=p_id)
-            p_data.team = team_name
-            p_data.amount = int(amount)
-            p_data.save()
-
-            auction_data.objects.create(player_id=p_id, team=team_name, amount=int(amount))
-
-            return redirect(login.views.auction)
+        check_auction_done = auction_data.objects.filter(player_id=p_id)
+        if check_auction_done:
+            messages.error(request, 'Player already added')
         else:
-            messages.error(request, 'Insufficient balance')
+
+            if int(amount) <= team_amount:
+                team_details.balance_amount = team_amount - int(amount)
+                team_details.save()
+
+                p_data = profile.objects.get(player_id=p_id)
+                p_data.team = team_name
+                p_data.amount = int(amount)
+                p_data.save()
+
+                auction_data.objects.create(player_id=p_id, team=team_name, amount=int(amount))
+
+                return redirect(login.views.auction)
+            else:
+                messages.error(request, 'Insufficient balance')
 
 
     return render(request, 'add_auction.html', {'profile_data': profile_data, 'team_data': team_data})
