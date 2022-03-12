@@ -6,8 +6,8 @@ from django.db import models
 class profile(models.Model):
     player_id = models.CharField(max_length=255, null=False, unique=True)
     profile_photo = models.ImageField(upload_to='images/', null=True, default='images/user_default_image.png')  
-    team =models.CharField(max_length=255, null=True, default=None)
-    amount = models.PositiveBigIntegerField(default=None, null=True)
+    team =models.CharField(max_length=255, null=True, default='Nil')
+    amount = models.PositiveBigIntegerField(default=0, null=True)
     active = models.PositiveBigIntegerField(default=0, null=False)
     
     def __str__(self):
