@@ -1,4 +1,5 @@
 from email.policy import default
+from pyexpat import model
 from django.db import models
 
 # Create your models here.
@@ -7,6 +8,7 @@ class profile(models.Model):
     profile_photo = models.ImageField(upload_to='images/', null=True, default='images/user_default_image.png')  
     team =models.CharField(max_length=255, null=True, default=None)
     amount = models.PositiveBigIntegerField(default=None, null=True)
+    active = models.PositiveBigIntegerField(default=0, null=False)
     
     def __str__(self):
         name = self.player_id

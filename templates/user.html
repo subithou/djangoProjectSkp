@@ -32,12 +32,10 @@
 <div class="wrapper">
 
   <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="" alt="AdminLTELogo" height="60" width="60">
-  </div>
+
 
   <!-- Navbar -->
-  
+  <body style="background-color: #cccccc;background-image: url("dist/img/bg_img.jpg")">
 
   <!-- Main Sidebar Container -->
   <section class="content">
@@ -45,8 +43,8 @@
     <!-- Default box -->
     <div class="card card-solid">
       <div class="card-body pb-0">
-        <h1 style="color:blue;text-align:center"><strong>Friends Circle </strong></h1>
-        <h1 style="color:red;text-align:center"><strong>Auction will Start at 10th March 2022 </strong></h1>
+        <h1 style="color:blue;text-align:center"><strong>Friends Circle Pika-Cricket premier League </strong></h1>
+        <h1 style="color:red;text-align:center"><strong>Auction </strong></h1>
         <h4 style="color:red;text-align:center"><a href="{% url 'live_auction' %}" >Live auction click here </a></h4>
         <div class="row">
             
@@ -59,7 +57,7 @@
               </tr>
              {% for i in team_details %}
              <tr>
-              <td>{{i.name}}</td>
+              <td><a href="{% url 'view_players' team_name=i.name %}">{{i.name}}<a></td>
               <td>{{i.owner}}</td>
               <td>{{i.manager}}</td>
             </tr>{% endfor %}
@@ -153,7 +151,7 @@
 
   </section>
 
-
+</body>
   
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

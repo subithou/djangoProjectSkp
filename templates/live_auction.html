@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="refresh" content="10" /> 
+<meta http-equiv="refresh" content="5" /> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
@@ -31,10 +31,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="" alt="AdminLTELogo" height="60" width="60">
-  </div>
+
 
   <!-- Navbar -->
   
@@ -48,7 +45,9 @@
         <h1 style="color:blue;text-align:center"><strong>Friends Circle </strong></h1>
         <h1 style="color:red;text-align:center"><strong>Live Auction </strong></h1>
         <div class="row">
-            
+          {% for i in auction_profile %}
+          <img src="{{i.profile_photo.url}}" style="width: 250px;height: 450px; alt="image"/>
+          {% endfor %}
             <table id="" class="table table-bordered table-hover">
               
               <tr>
@@ -82,7 +81,7 @@
             </tr>
            {% endfor %}
         </table>
-      
+        
       <!-- 
           <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
             
@@ -137,7 +136,7 @@
       <!-- /.card-footer -->
     </div>
     <!-- /.card -->
-
+    
   </section>
 
 
